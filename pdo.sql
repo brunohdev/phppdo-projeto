@@ -1,7 +1,7 @@
 --
 -- Base de Dados: `pdo`
 --
-CREATE DATABASE IF NOT EXISTS `pdo` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `pdo` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `pdo`;
 
 -- --------------------------------------------------------
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `alunos` (
   `nome` varchar(255) NOT NULL,
   `nota` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
