@@ -64,5 +64,5 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `login`, `senha`) VALUES
-(1, 'Bruno Henrique', 'brunohdev', 'f22dc0a147e17073ce0f7017916d8658f2f2bf44'),
-(3, 'teste', 'teste', 'e353391430a5896e36e3aeeba7687b7684ca4675');
+(3, 'teste', 'teste', '$2y$10$YlZba7mo8bKriDlqoMdBnOzScGtiGkWejSf9XKPCmvZCOQpDbBB1C'),
+(4, 'Bruno Henrique', 'brunohdev', '$2y$10$ilQ.CQc7Td14qTL1MnM7M.7FJmA2XXLKtNwkyCR6SkjYfQbSxEEQG');
