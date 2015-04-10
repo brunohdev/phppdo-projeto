@@ -15,18 +15,23 @@ class LoginService
     
     public function validar($login, $senha)
     {
-        $salt = "akeaokea.e19231;aejaojeoasije2u39123"; // SALT GERAL
-        $salt_unico = "fadasas6165165"; // SALT ÚNICO
-
-        $senha_sha1 = sha1($senha.$salt.$salt_unico);
-        
-        $query = "SELECT id, nome FROM usuarios WHERE login=:login AND senha=:senha LIMIT 1";
+        $query = "SELECT id, nome, senha FROM usuarios WHERE login=:login LIMIT 1";
         
         $stmt = $this->db->prepare($query);
         $stmt->bindValue(':login', $login);
-        $stmt->bindValue(':senha', $senha_sha1);
         $stmt->execute();
+        $user = $stmt->fetch();
         
-        return $stmt->fetch();
+        if ($user) {
+            if(password_verify($senha, $user['senha'])) {
+                $_SESSION['usuarioID'] = $user['id'];
+                $_SESSION['usuarioNome'] = $user['nome'];
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 }

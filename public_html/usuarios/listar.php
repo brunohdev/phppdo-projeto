@@ -16,5 +16,7 @@ foreach ($service->listar() as $u) {
     echo "<a href=\"usuarios/alterar?id=".$u['id']."\">Alterar</a>";
     if ($_SESSION['usuarioID'] != $u['id']) {
         echo " - <a href=\"usuarios/remover?id=".$u['id']."\">Remover</a><br/>";
+    }else{
+        echo "<br/>";
     }
 }

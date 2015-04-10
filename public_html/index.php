@@ -45,10 +45,7 @@ $service = new LoginService($db->getPdo(), $usuario);
                 
                 $resultado = $service->validar($login, $senha);
                 
-                if (is_array($resultado)) {
-                    $_SESSION['usuarioID'] = $resultado['id'];
-                    $_SESSION['usuarioNome'] = $resultado['nome'];
-                    
+                if ($resultado) {
                     header("Location: /inicio");
                 }
                 else {

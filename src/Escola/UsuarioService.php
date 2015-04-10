@@ -26,7 +26,7 @@ class UsuarioService
     
     public function listar()
     {
-        $query = "SELECT id, nome, login FROM usuarios";
+        $query = "SELECT id, nome, login FROM usuarios ORDER BY nome";
         $stmt = $this->db->query($query);
         
         return $stmt->fetchAll(); // Traz os dados

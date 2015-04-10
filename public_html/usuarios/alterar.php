@@ -26,15 +26,12 @@ if (isset($_POST['enviar'])){
     $login = $_POST['login'];
     $senha = $_POST['senha'];
     
-    $salt = "akeaokea.e19231;aejaojeoasije2u39123"; // SALT GERAL
-    $salt_unico = "fadasas6165165"; // SALT ÚNICO
-
-    $senha_sha1 = sha1($senha.$salt.$salt_unico);
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
     $usuario->setId($id)
             ->setNome($nome)
             ->setLogin($login)
-            ->setSenha($senha_sha1)
+            ->setSenha($senha_hash)
     ;
 
     $resultado = $service->alterar();
